@@ -178,9 +178,9 @@ int TenPinBowling::calculateScore(const std::vector<int> &vec)
             i++;
             frames++;
         }
-        else if(frames<=10)
+        else if(frames<=10 && i<vec.size())
         {
-            sum+=vec[i];
+            sum+=vec[i];          
         }
     }
     return sum;
