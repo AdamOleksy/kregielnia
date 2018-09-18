@@ -146,6 +146,8 @@ Status TenPinBowling::getPlayerStatus(std::string const & playerFrames)
 
 int TenPinBowling::calculateScore(const std::vector<int> &vec)
 {
+    if(vec.size() == 1)
+        return vec[0];
     int sum=0;
     int frames = 1;
     for(int i = 0; i < vec.size(); i++)
@@ -178,7 +180,7 @@ int TenPinBowling::calculateScore(const std::vector<int> &vec)
             i++;
             frames++;
         }
-        else if(frames<=10 && i<vec.size())
+        else if(frames<=10)
         {
             sum+=vec[i];          
         }
